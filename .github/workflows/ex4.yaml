@@ -1,7 +1,12 @@
 name: reusable workflow
 on: 
-  workflow_dispatch:
-
+  workflow_call:   
+    input:
+      node-version:
+        type:string
+        requiered:true
+        default:'lts/*'
+        
 jobs:
   run-npm-test:
     runs-on: ubuntu-latest
